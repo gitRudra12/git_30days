@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/pages/Home_page.dart';
 import 'package:flutter_application_3/pages/LoginPage.dart';
+import 'package:flutter_application_3/utilis/Routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // we are declaring main method here
@@ -16,6 +17,10 @@ class CourseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      /*  This below line is use for the remove banner 
+       debugShowCheckedModeBanner: false,  
+         
+      */
       //we are defining routes below
       themeMode: ThemeMode.light,
       theme: ThemeData(
@@ -23,8 +28,8 @@ class CourseApp extends StatelessWidget {
           fontFamily: GoogleFonts.lato().fontFamily),
       initialRoute: "/login",
       routes: {
-        "/": (context) => HomePAge(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePAge(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
